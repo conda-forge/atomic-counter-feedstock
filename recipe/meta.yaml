@@ -1,5 +1,5 @@
 {% set name = "atomic-counter" %}
-{% set version = "0.1.1" %}
+{% set version = "0.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/a/atomic_counter/atomic_counter-{{ version }}.tar.gz
-  sha256: bae04f1b3291eb90faeefa7e82685bc2a93f8dd3604578a60faeda6c9dd21043
+  sha256: 39e6f10d0240af39b606dbf7f0b92c4e795dc7fce31abd3543a454ccae2d6586
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
@@ -46,4 +46,3 @@ about:
 extra:
   recipe-maintainers:
     - timkpaine
- 
