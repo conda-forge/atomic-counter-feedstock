@@ -25,7 +25,6 @@ requirements:
     - maturin
   run:
     - python
-    - python-dateutil
 
 test:
   imports:
@@ -38,8 +37,7 @@ test:
 about:
   home: https://github.com/timkpaine/atomic-counter
   summary: 'Atomic counters'
-  description: |
-    `atomic-counter` is a rust library for generating a monotonically increasing sequence of integers. Depending on the particular configuration of the counter, the generated sequence will be produce unique numbers down to the nanosecond, regardless of memory state.
+  description: `atomic-counter` is a rust library for generating a monotonically increasing sequence of integers. Depending on the particular configuration of the counter, the generated sequence will be produce unique numbers down to the nanosecond, regardless of memory state.
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
