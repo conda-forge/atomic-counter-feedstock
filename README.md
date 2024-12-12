@@ -7,10 +7,9 @@ Home: https://github.com/timkpaine/atomic-counter
 
 Package license: Apache-2.0
 
-Summary: Atomic counters
+Summary: atomic-counter is a library for generating a monotonically increasing sequence of integers
 
-`atomic-counter` is a rust library for generating a monotonically increasing sequence of integers. Depending on the particular configuration of the counter, the generated sequence will be produce unique numbers down to the nanosecond, regardless of memory state.
-
+atomic-counter is a library for generating a monotonically increasing sequence of integers
 
 Current build status
 ====================
