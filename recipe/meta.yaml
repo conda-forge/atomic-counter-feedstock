@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/a/atomic_counter/atomic_counter-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/a/atomic_counter/atomic_counter-{{ version }}.tar.gz
   sha256: c221aa80581b98c288c6833ac06e0cf74e2081bd40e0e5dcda67f590bc2739bb
 
 build:
