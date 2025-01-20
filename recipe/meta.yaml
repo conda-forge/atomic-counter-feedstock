@@ -34,7 +34,7 @@ test:
     - atomic_counter
   requires:
     - pip
-    - python  {{ python_min }}.*
+    - python {{ python_min }}.*  # [is_abi3]
   commands:
     - pip check
 
