@@ -1,0 +1,56 @@
+schema_version: 1
+
+context:
+  name: atomic-counter
+  version: 0.1.4
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/a/atomic_counter/atomic_counter-${{ version }}.tar.gz
+  sha256: c221aa80581b98c288c6833ac06e0cf74e2081bd40e0e5dcda67f590bc2739bb
+
+build:
+  number: 0
+  skip: is_abi3 and not is_python_min
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    version_independent: ${{ is_abi3 }}
+
+requirements:
+  build:
+    - ${{ compiler('rust') }}
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
+    - maturin
+  host:
+    - python
+    - if: is_abi3
+      then: python-abi3
+    - pip
+    - maturin
+  run:
+    - python
+
+tests:
+  - python:
+      imports:
+        - atomic_counter
+  - requirements:
+      run:
+        - pip
+    script:
+      - pip check
+
+about:
+  summary: atomic-counter is a library for generating a monotonically increasing sequence of integers
+  description: atomic-counter is a library for generating a monotonically increasing sequence of integers
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://github.com/timkpaine/atomic-counter
+
+extra:
+  recipe-maintainers:
+    - timkpaine
