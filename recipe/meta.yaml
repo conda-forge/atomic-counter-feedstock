@@ -12,6 +12,8 @@ source:
 build:
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
+  python_version_independent: true  # [is_abi3]
+  skip: true  # [is_abi3 and not is_python_min]
 
 requirements:
   build:
@@ -23,6 +25,7 @@ requirements:
     - python
     - pip
     - maturin
+    - python-abi3   # [is_abi3]
   run:
     - python
 
