@@ -38,13 +38,11 @@ tests:
   - python:
       imports:
         - atomic_counter
-  - requirements:
-      run:
-        - pip
-        - if: is_abi3
-          then: python  ${{ python_min }}
-    script:
-      - pip check
+      python_version: ${{ python_min + ".*" if is_abi3 else "" }}
+
+  - python:
+      imports:
+        - atomic_counter
 
 about:
   summary: atomic-counter is a library for generating a monotonically increasing sequence of integers
