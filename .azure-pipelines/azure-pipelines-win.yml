@@ -8,11 +8,8 @@ jobs:
     vmImage: windows-2022
   strategy:
     matrix:
-      win_64_is_abi3falseis_python_minfalsepython3.13.____cp313t:
-        CONFIG: win_64_is_abi3falseis_python_minfalsepython3.13.____cp313t
-        UPLOAD_PACKAGES: 'True'
-      win_64_is_abi3trueis_python_mintruepython3.9.____cpython:
-        CONFIG: win_64_is_abi3trueis_python_mintruepython3.9.____cpython
+      win_64_is_python_mintruepython3.9.____cpython:
+        CONFIG: win_64_is_python_mintruepython3.9.____cpython
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
   variables:
