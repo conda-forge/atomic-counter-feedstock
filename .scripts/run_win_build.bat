@@ -43,6 +43,8 @@ call :start_group "Configuring conda"
 :: Activate the base conda environment
 echo Activating environment
 echo "PATH=%PATH%"
+set "PATH=%MINIFORGE_HOME%;%MINIFORGE_HOME%\Library\bin;%MINIFORGE_HOME%\Scripts;%MINIFORGE_HOME%\bin;%MINIFORGE_HOME%\condabin;%PATH%"
+echo "PATH=%PATH%"
 call "%MINIFORGE_HOME%\Scripts\activate.bat"
 echo "PATH=%PATH%"
 call "%MINIFORGE_HOME%\condabin\conda.bat" activate
