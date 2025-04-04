@@ -45,6 +45,8 @@ echo Activating environment
 echo "PATH=%PATH%"
 call "%MINIFORGE_HOME%\Scripts\activate.bat"
 echo "PATH=%PATH%"
+call "%MINIFORGE_HOME%\condabin\conda.bat" activate
+echo "PATH=%PATH%"
 type "%MINIFORGE_HOME%\Scripts\activate.bat"
 :: Configure the solver
 set "CONDA_SOLVER=libmamba"
