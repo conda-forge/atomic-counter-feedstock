@@ -11,7 +11,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 2
   python_version_independent: true
   skip: True  # [is_abi3 and not is_python_min]
 
@@ -20,9 +20,9 @@ requirements:
     - {{ compiler('rust') }}
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
-    - maturin
-    - cross-python_{{ target_platform }}   # [build_platform != target_platform]
-    - python                               # [build_platform != target_platform]
+    - maturin                                # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - python                                 # [build_platform != target_platform]
   host:
     - python {{ python_min }}    # [is_abi3]
     - python-abi3                # [is_abi3]
