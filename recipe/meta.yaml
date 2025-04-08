@@ -36,8 +36,11 @@ test:
     - atomic_counter
   requires:
     - pip
+    - abi3audit
   commands:
     - pip check
+    - abi3audit $SP_DIR/atomic_counter/atomic_counter.abi3.so -s -v --assume-minimum-abi3 {{ python_min }}    # [unix]
+    - abi3audit %SP_DIR%/atomic_counter/atomic_counter.pyd -s -v --assume-minimum-abi3 {{ python_min }}       # [win]
 
 about:
   home: https://github.com/timkpaine/atomic-counter
