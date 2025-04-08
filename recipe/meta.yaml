@@ -24,12 +24,11 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - python                                 # [build_platform != target_platform]
   host:
-    - python {{ python_min }}    # [is_abi3]
+    - python
     - python-abi3                # [is_abi3]
     - pip
     - maturin
   run:
-    - python >={{ python_min }}  # [is_abi3]
     - python
 
 test:
@@ -37,7 +36,6 @@ test:
     - atomic_counter
   requires:
     - pip
-    - python {{ python_min }}    # [is_abi3]
   commands:
     - pip check
 
